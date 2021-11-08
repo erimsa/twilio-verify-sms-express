@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verify SMS Service</title>
+    </head>
+
+    <body>
+        <form id="phone-form">
+            <h2>Enter phone number to verify (with country code) </h2>
+            <input type="tel" id = "phone-number-input" placeholder="e.g 905551232323"/>
+            <input id="phone-submit" type="submit"/>
+        </form>
+
+        <form id="verify-form">
+            <h2>Enter the verification code</h2>
+            <input type="number" id="otp-input" placeholder="e.g. 123456"/>
+            <input id="otp-submit" type="submit"/>
+        </form>
+
+        <div id="response-text"></div>
+    </body>
+
+    <script type="text/javascript" src="script.js"></script>
+</html>
+
+<style>
+    #verify-form,
+    #response-text {
+        display: none;
+    }
+</style>

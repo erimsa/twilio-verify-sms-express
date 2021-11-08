@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  verify-sms-otp:
+    image: verify-sms:latest
+    environment:
+      NODE_ENV: production
+      TWILIO_ACCOUNT_SID: /run/secrets/account_sid
+      TWILIO_AUTH_TOKEN: /run/secrets/auth_token
+      VERIFY_SERVICE_SID: /run/secrets/verify_sid
+    secrets:
+      - account_sid
+      - auth_token
+      - verify_sid
+    ports:
+      - 3000:3000
+
+secrets:                        # top level secrets block
+  account_sid:
+    external: true
+  auth_token:
+    external: true
+  verify_sid:
+    external: true
